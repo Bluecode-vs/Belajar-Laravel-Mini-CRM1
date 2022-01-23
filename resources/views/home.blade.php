@@ -104,7 +104,7 @@
                                 </p>
                                 
                                 <a class="dropdown-item" href="{{ route('postlogout') }}" ><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Loout</a>
+                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
                                 
                               
                             </ul>
