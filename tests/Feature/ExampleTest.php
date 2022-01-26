@@ -25,18 +25,5 @@ class ExampleTest extends TestCase
 
     }
   
-    // public function test_halaman_lostpassword()
-    // {
-    //     $response = $this->get('/lostpass');
-
-    //     $response->assertStatus(200);
-    // }
-
-    // public function test_halaman_lostpassword2()
-    // {
-    //     $response = $this->get('/lostpass');
-
-    //     $response->assertStatus(200);
-    // }
   
 }
