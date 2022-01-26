@@ -23,7 +23,7 @@
             <nav class="navbar top-navbar navbar-expand-md navbar-dark">
                 <div class="navbar-header" data-logobg="skin5">
                     
-                     <!-- ============================================================== -->
+                    <!-- ============================================================== -->
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <a class="navbar-brand" href="index.html">
@@ -34,21 +34,13 @@
                             {{-- <img src="../../assets/images/logo-icon.png" alt="homepage" class="light-logo" /> --}}
 
                         </b>
-                        <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
                             {{-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> --}}
                             <h3>Mini CRM Virgo</h3>
                         </span>
-                         {{-- Logo icon  --}}
-                         {{-- <b class="logo-icon">  --}}
-                       {{-- <!-- You can put here icon as well // --><i class="wi wi-sunset"></i> // --}}
-                          <!--Dark Logo icon -->
-                         {{-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />  --}}
 
-                         </b> 
-                        {{-- End Logo icon  --}}
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -84,8 +76,8 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-end">
-                
-                               
+                       
+                    
                         <!-- ============================================================== -->
                         <!-- User profile -->
                         <!-- ============================================================== -->
@@ -100,10 +92,9 @@
                                     {{ auth()->user()->name }}
                                 </p>
                                 
-                                <a class="dropdown-item" href="{{ route('postlogout') }}" ><i class="fa fa-power-off me-1 ms-1"></i> 
-                                    {{ __('logout') }}
-                                </a>
-                                
+                                <a class="dropdown-item" href="{{ route('postlogout') }}"><i
+                                        class="fa fa-power-off me-1 ms-1"></i>{{ __('logout') }}</a>
+                            
                               
                             </ul>
                         </li>
@@ -119,9 +110,6 @@
                             </ul>
         
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile -->
-                        <!-- ============================================================== -->
                     </ul>
                 </div>
             </nav>
@@ -141,21 +129,19 @@
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/home" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
                                     class="hide-menu">{{ __('dashboard') }}</span></a></li>
-                      
                     
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/company" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
                                     class="hide-menu">{{ __('Table Company') }}</span></a></li>
 
-                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
+                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/karyawan" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">{{ __('Table Employee') }}</span></a></li>    
-
+                                    class="hide-menu">{{ __('Table Employee') }}</span></a></li>
+                      
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/profile" aria-expanded="false"><i
+                                href="/buttons" aria-expanded="false"><i
                                     class="mdi mdi-relative-scale"></i><span class="hide-menu">{{ __('Profile') }}</span></a></li>
-                        </li>
-                            
+                    
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -175,11 +161,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">{{ __('Edit Your Employee') }}</h4>
+                        
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><p>{{ __('employee') }}</p></li>
+                                    <li class="breadcrumb-item"><p>{{ __('profile') }}</p></li>
+                                    
                                 </ol>
                             </nav>
                         </div>
@@ -194,54 +181,43 @@
             <!-- ============================================================== -->
             <div class="container-fluid">
                 <!-- ============================================================== -->
-                <!-- FORM INPUT EMPLOYEE  -->
+                <!-- Start Page Content -->
                 <!-- ============================================================== -->
-                <form class="row g-3" action="{{ url('updatekaryawan', $peg->id) }}" method="post"> 
-                    {{ csrf_field() }}
-                    @method('PUT')
-                    <div class="col-md-6">
-                      <label for="inputEmail4" class="form-label">{{ __('First Name') }}</label>
-                      <input type="text" class="form-control" id="inputEmail4" name="FirstName" value="{{ $peg->First_Name }}">
-                        <div class="alert-danger">{{  $errors->first('FirstName') }}</div>
+                <div class="container mt-5 mb-5">
+                    <div class="row no-gutters">
+                        <div class="col-md-4 col-lg-4"><img src="https://i.imgur.com/aCwpF7V.jpg" width="100%" height="100%"></div>
+                        <div class="col-md-8 col-lg-8">
+                            <div class="d-flex flex-column">
+                                <div class="d-flex flex-row justify-content-between align-items-center p-5 bg-dark text-white">
+                                    <h3 class="display-5">{{ auth()->user()->name }}</h3><i class="fa fa-facebook"></i><i class="fa fa-google"></i><i class="fa fa-youtube-play"></i><i class="fa fa-dribbble"></i><i class="fa fa-linkedin"></i>
+                                </div>
+                                <div class="p-3 bg-black text-white">
+                                    <h6>Web designer &amp; Developer</h6>
+                                </div>
+                                <div class="d-flex flex-row text-white">
+                                    <div class="p-4 bg-primary text-center skill-block">
+                                        <h4>90%</h4>
+                                        <h6>Bootstrap</h6>
+                                    </div>
+                                    <div class="p-3 bg-success text-center skill-block">
+                                        <h4>70%</h4>
+                                        <h6>Jquery</h6>
+                                    </div>
+                                    <div class="p-3 bg-warning text-center skill-block">
+                                        <h4>80%</h4>
+                                        <h6>HTML</h6>
+                                    </div>
+                                    <div class="p-3 bg-danger text-center skill-block">
+                                        <h4>75%</h4>
+                                        <h6>PHP</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6">
-                      <label for="inputPassword4" class="form-label">{{ __('Last Name') }}</label>
-                      <input type="text" class="form-control" id="inputPassword4" name="LastName" value="{{ $peg->Last_Name }}">
-                      <div class="alert-danger">{{  $errors->first('LastName') }}</div>
-                    </div>
-                    <div class="col-12">
-                        <label for="inputEmail4" class="form-label">{{ __('companies') }}</label>
-                      <select class="form-control select2" placeholder="Pilih Company" style= "width: 100%" name="company_id" id="company_id">
-                        <option disabled value>{{ __('Choose Company') }}</option>
-                        <option value="{{ $peg->company_id }}">{{ $peg->Rcompany->name }}</option>
-                        @foreach ($comp as $cp)
-                            @if (old('company_id')== $cp->id)
-
-                                <option value="{{ $cp->id }}" selected>{{ $cp->name }}</option>
-                            @else
-                                <option value="{{ $cp->id }}" >{{ $cp->name }}</option>
-                            
-                            @endif
-                        @endforeach
-
-                        </select>
-                    </div>
-                    <div class="col-12">
-                      <label for="inputAddress2" class="form-label">{{ __('email') }}</label>
-                      <input type="text" class="form-control" id="inputAddress2" name="Email" value="{{ $peg->email}}">
-                      <div class="alert-danger">{{  $errors->first('Email') }}</div>
-                    </div>
-                    <div class="col-md-6">
-                      <label for="inputCity" class="form-label">{{ __('phone') }}</label>
-                      <input type="text" class="form-control" id="inputCity" name="Phone" value="{{ $peg->phone }}">
-                      <div class="alert-danger">{{  $errors->first('Phone') }}</div>
-                    </div>
+                </div>
+              
             
-                  
-                    <div class="col-12">
-                      <button type="submit" class="btn btn-primary">{{ __('submit') }}</button>
-                    </div>
-                  </form>
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -250,7 +226,7 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Laravel Mini CRM. Designed and Developed by Virgo Stevanus
+                All Rights Reserved by Laravel Mini CRM. Designed and Developed by Virgo Stevanus.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -268,27 +244,15 @@
     <!-- ============================================================== -->
     <script src="/assets/libs/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></>
+    <!-- slimscrollbar scrollbar JavaScript -->
     <script src="/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="./assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="/assets/extra-libs/sparkline/sparkline.js"></script>
     <!--Wave Effects -->
     <script src="/dist/js/waves.js"></script>
     <!--Menu sidebar -->
     <script src="/dist/js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="/dist/js/custom.min.js"></script>
-    <!--This page JavaScript -->
-    <!-- <script src="../../dist/js/pages/dashboards/dashboard1.js"></script> -->
-    <!-- Charts js Files -->
-    <script src="/assets/libs/flot/excanvas.js"></script>
-    <script src="/assets/libs/flot/jquery.flot.js"></script>
-    <script src="/assets/libs/flot/jquery.flot.pie.js"></script>
-    <script src="/assets/libs/flot/jquery.flot.time.js"></script>
-    <script src="/assets/libs/flot/jquery.flot.stack.js"></script>
-    <script src="/assets/libs/flot/jquery.flot.crosshair.js"></script>
-    <script src="/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
-    <script src="/dist/js/pages/chart/chart-page-init.js"></script>
-
 </body>
-
 @endsection

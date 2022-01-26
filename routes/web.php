@@ -47,10 +47,10 @@ Route::group(['middleware' => ['auth']], function(){
     Route::get('/deletekaryawan/{id}', [TablekaryawanControl::class, 'delete'])->name('deletekaryawan');
     
    
-    // Route for button, 
-    Route::get('/buttons', function(){
-        return view('buttons', [
-            'title' => 'Mini CRM with Laravel | Buttons'
+    // Route for profile, 
+    Route::get('/profile', function(){
+        return view('profile', [
+            'title' => 'Mini CRM with Laravel | Profile'
         ]);
     });
     
@@ -71,6 +71,11 @@ Route::get('/login', [LoginControl::class, 'index'])->name('login')->middleware(
 Route::post('/postlog', [LoginControl::class, 'postlog'])->name('postlog');
 Route::get('/postlogout', [LoginControl::class, 'postlogout'])->name('postlogout');
 
+// route Multi-langguage
+Route::get('locale/{locale}', function($locale){
+    \Session::put('locale',$locale);
+    return redirect()->back();
+});
 
 
 

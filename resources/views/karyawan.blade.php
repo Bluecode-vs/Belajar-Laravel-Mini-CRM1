@@ -105,17 +105,23 @@
                                 </p>
                                 
                                 <a class="dropdown-item" href="{{ route('postlogout') }}"><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                        class="fa fa-power-off me-1 ms-1"></i>{{ __('logout') }}</a>
                                 <div class="dropdown-divider"></div>
                               
                             </ul>
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile -->
-                        <!-- ============================================================== -->
-                        <!-- ============================================================== -->
-                        <!-- User profile and search -->
-                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{__('id') }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                
+                                <a href="{{ url('locale/id') }}" class="dropdown-item">{{__('indonesian') }}</a>
+                                <a href="{{ url('locale/en') }}" class="dropdown-item">{{__('english') }}</a>
+
+                            </ul>
+        
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -134,19 +140,19 @@
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/home" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">{{ __('dashboard') }}</span></a></li>
                 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/company" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Companies</span></a></li>
+                                    class="hide-menu">{{__('Table Company') }}</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/karyawan" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Employee</span></a></li>
+                                    class="hide-menu">{{ __('Table Employee') }}</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/buttons" aria-expanded="false"><i
-                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
+                                href="/profile" aria-expanded="false"><i
+                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">{{ __('Profile') }}</span></a></li>
                     
                         
                     </ul>
@@ -168,12 +174,12 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Tables Employee</h4>
+                        <h4 class="page-title">{{ __('Table Employee') }}</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li class="breadcrumb-item active" aria-current="page">Library</li>
+                                    <li class="breadcrumb-item"><p>{{ __('Table Employee') }}</p></li>
+                                    
                                 </ol>
                             </nav>
                         </div>
@@ -192,7 +198,7 @@
                 <!-- ============================================================== -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Basic Datatable</h5>
+                        <h5 class="card-title">Data {{ __('employee') }}</h5>
                             @if (session()->has('success'))
                             <div class="alert alert-primary" role="alert">
                                 {{ session('success') }}
@@ -203,12 +209,12 @@
                                     <table id="zero_config" class="table table-striped table-bordered">
                                         <thead>
                                             <tr>
-                                                <th>First Name</th>
-                                                <th>Last name</th>
-                                                <th>Company</th>
-                                                <th>Email</th>
-                                                <th>Phone</th>
-                                                <th>Action</th>
+                                                <th>{{ __('First Name') }}</th>
+                                                <th>{{ __('Last Name') }}</th>
+                                                <th>{{ __('companies') }}</th>
+                                                <th>{{ __('email') }}</th>
+                                                <th>{{ __('phone') }}</th>
+                                                <th>{{ __('action') }}</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -220,7 +226,7 @@
                                                   <td>{{ $dtk->email }}</td>
                                                   <td>{{ $dtk->phone }}</td>
                                                   <td>
-                                                      <a href="{{ url('editkaryawan', $dtk->id) }}">Edit</i></a> | <a href="{{ url('deletekaryawan',$dtk->id) }}">Delete</a> 
+                                                      <a href="{{ url('editkaryawan', $dtk->id) }}">{{ __('edit') }}</i></a> | <a href="{{ url('deletekaryawan',$dtk->id) }}">{{ __('delete') }}</a> 
                                                   </td>
                                               </tr> 
                                            @endforeach

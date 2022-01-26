@@ -41,14 +41,8 @@
                             {{-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" /> --}}
                             <h3>Mini CRM Virgo</h3>
                         </span>
-                         {{-- Logo icon  --}}
-                         {{-- <b class="logo-icon">  --}}
-                       {{-- <!-- You can put here icon as well // --><i class="wi wi-sunset"></i> // --}}
-                          <!--Dark Logo icon -->
-                         {{-- <img src="../../assets/images/logo-text.png" alt="homepage" class="light-logo" />  --}}
-
-                         </b> 
-                        {{-- End Logo icon  --}}
+                         
+                         
                     </a>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
@@ -84,8 +78,7 @@
                     <!-- Right side toggle and nav items -->
                     <!-- ============================================================== -->
                     <ul class="navbar-nav float-end">
-                
-                               
+                    
                         <!-- ============================================================== -->
                         <!-- User profile -->
                         <!-- ============================================================== -->
@@ -101,14 +94,23 @@
                                 </p>
                                 
                                 <a class="dropdown-item" href="{{ route('postlogout') }}" ><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                        class="fa fa-power-off me-1 ms-1"></i>{{ __('logout') }}</a>
                                 
                               
                             </ul>
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile -->
-                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{__('id') }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                
+                                <a href="{{ url('locale/id') }}" class="dropdown-item">{{__('indonesian') }}</a>
+                                <a href="{{ url('locale/en') }}" class="dropdown-item">{{__('english') }}</a>
+
+                            </ul>
+        
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -127,20 +129,20 @@
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/home" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">{{ __('dashboard') }}</span></a></li>
                       
                     
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/company" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Company</span></a></li>
+                                    class="hide-menu">{{ __('Table Company') }}</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/karyawan" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Employee</span></a></li>    
+                                    class="hide-menu">{{ __('Table Employee') }}</span></a></li>    
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/buttons" aria-expanded="false"><i
-                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
+                                href="/profile" aria-expanded="false"><i
+                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">{{ __('Profile') }}</span></a></li>
                         </li>
                             
                     </ul>
@@ -162,11 +164,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Input Your Employee</h4>
+                        <h4 class="page-title">{{ __('Input Your Employee') }}</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><p>{{ __('employee') }}</p></li>
                                    
                                 </ol>
                             </nav>
@@ -188,20 +190,20 @@
                     {{ csrf_field() }}
                    
                     <div class="col-md-6">
-                        <label for="inputEmail4" class="form-label">First Name</label>
+                        <label for="inputEmail4" class="form-label">{{ __('First Name') }}</label>
                         <input type="text" class="form-control" id="inputEmail4" name="FirstName" required autofocus value="{{ old('FirstName') }}">
                         <div class="alert-danger">{{  $errors->first('FirstName') }}</div>
                     </div>
                     <div class="col-md-6">
-                      <label for="inputPassword4" class="form-label">Last Name</label>
+                      <label for="inputPassword4" class="form-label">{{ __('Last Name') }}</label>
                       <input type="text" class="form-control" id="inputPassword4" name="LastName" required value="{{ old('LastName') }}">
                       <div class="alert-danger">{{  $errors->first('lastName') }}</div>
                       
                     </div>
                     <div class="col-12">
-                        <label for="inputEmail4" class="form-label">Company</label>
+                        <label for="inputEmail4" class="form-label">{{ __('companies') }}</label>
                       <select class="form-control select2" placeholder="Pilih Company" style= "width: 100%" name="company_id" id="company_id" value="{{ old('company_id') }}">
-                        <option disabled value>Pilih Company</option>
+                        <option disabled value>{{ __('Choose Company') }}</option>
                         @foreach ($comp as $cp)
                             @if (old('company_id')== $cp->id)
 
@@ -215,19 +217,19 @@
                         </select>
                     </div>
                     <div class="col-12">
-                      <label for="inputAddress2" class="form-label">Email</label>
+                      <label for="inputAddress2" class="form-label">{{ __('email') }}</label>
                       <input type="text" class="form-control " id="inputAddress2" name="Email"  value="{{ old('Email') }}">
                       <div class="alert-danger">{{  $errors->first('Email') }}</div>
                     </div>
                     <div class="col-md-6">
-                      <label for="inputCity" class="form-label">Phone</label>
+                      <label for="inputCity" class="form-label">{{ __('phone') }}</label>
                       <input type="text" class="form-control  " id="inputCity" name="Phone" value="{{ old('Phone') }}">
                       <div class="alert-danger">{{  $errors->first('Phone') }}</div>
                     </div>
             
                   
                     <div class="col-12">
-                      <button type="submit" class="btn btn-primary">Submit</button>
+                      <button type="submit" class="btn btn-primary">{{ __('submit') }}</button>
                     </div>
                 </form>
             </div>

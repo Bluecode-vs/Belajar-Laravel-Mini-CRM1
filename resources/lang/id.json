@@ -1,0 +1,33 @@
+{
+    "english":"english",
+    "indonesian": "indonesian",
+    "id":"id",
+    "welcome":"Selamat Datang",
+    "companies":"Perusahaan",
+    "employee" :"Karyawan",
+    "login":"Masuk",
+    "logout": "Keluar",
+    "dashboard":"dasbor",
+    "Table Company":"Tabel Perusahaan",
+    "Table Employee":"Tabel Karyawan",
+    "Profile":"Profil",
+    "Klik Companies or Employee to input your data" : "Silahkan Pilih Perusahaan Atau Karyawan untuk memasukan data",
+    "name" : "Nama",
+    "email" : "Email",
+    "website" : "Website",
+    "logo" : "Logo",
+    "action" :"Aksi",
+    "edit" : "Ubah",
+    "delete" : "Hapus",
+    "First Name" :"Nama Depan",
+    "Last Name" : "Nama Belakang",
+    "phone" :"Telepon",
+    "Input Your Company" : "Masukan Perusahaan Anda",
+    "Input Your Employee" : "Masukan Karyawan Anda",
+    "submit" :"Kirim",
+    "Choose Company": "Pilih Perusahaan",
+    "Edit Your Company" : "Ubah Perusahaan Anda",
+    "Edit Your Employee" : "Ubah Karyawan Anda"
+
+
+}

@@ -79,7 +79,7 @@
                         <!-- ============================================================== -->
                         <li class="nav-item search-box"> 
                             <a class="nav-link waves-effect waves-dark" href="javascript:void(0)" style="color-adjust:white "> 
-                                Welcome {{ auth()->user()->name }}
+                                {{__('welcome')  }} {{ auth()->user()->name }}
                             </a>
                         </li> 
                     </ul>
@@ -96,7 +96,7 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <img src="../../assets/images/users/1.jpg" alt="user" class="rounded-circle" width="31">
                             </a>
-                            
+                           
                             <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
                                 
                                 <p class="dropdown-item" href="" ><i class="me-1 ms-1"></i> 
@@ -104,14 +104,23 @@
                                 </p>
                                 
                                 <a class="dropdown-item" href="{{ route('postlogout') }}" ><i
-                                        class="fa fa-power-off me-1 ms-1"></i> Logout</a>
+                                        class="fa fa-power-off me-1 ms-1"></i>{{__('logout') }}</a>
                                 
                               
                             </ul>
                         </li>
-                        <!-- ============================================================== -->
-                        <!-- User profile -->
-                        <!-- ============================================================== -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {{__('id') }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end user-dd animated" aria-labelledby="navbarDropdown">
+                                
+                                <a href="{{ url('locale/id') }}" class="dropdown-item">{{__('indonesian') }}</a>
+                                <a href="{{ url('locale/en') }}" class="dropdown-item">{{__('english') }}</a>
+                              
+                            </ul>
+        
+                        </li>
                     </ul>
                 </div>
             </nav>
@@ -130,20 +139,20 @@
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="/home" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
-                                    class="hide-menu">Dashboard</span></a></li>
+                                    class="hide-menu">{{ __('dashboard') }}</span></a></li>
                       
                     
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('company') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Company</span></a></li>
+                                    class="hide-menu">{{ __('Table Company') }}</span></a></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="{{ route('karyawan') }}" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
-                                    class="hide-menu">Table Employee</span></a></li>    
+                                    class="hide-menu">{{ __('Table Employee') }}</span></a></li>    
 
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/buttons" aria-expanded="false"><i
-                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">Buttons</span></a></li>
+                                href="/profile" aria-expanded="false"><i
+                                    class="mdi mdi-relative-scale"></i><span class="hide-menu">{{ __('Profile') }}</span></a></li>
                         </li>
                             
                     </ul>
@@ -165,11 +174,11 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title">Klik Companies or Employee to input your data</h4>
+                        <h4 class="page-title">{{ __('Klik Companies or Employee to input your data') }}</h4>
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item"><p>Home</p></li>
                                     
                                 </ol>
                             </nav>
@@ -194,7 +203,7 @@
                         <div class="card card-hover">
                             <div class="box bg-cyan text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-view-dashboard"></i></h1>
-                                <h6 class="text-white">Companies</h6>
+                                <h6 class="text-white">{{ __('companies') }}</h6>
                             </div>
                         </div>
                         </a>
@@ -206,7 +215,7 @@
                         <div class="card card-hover">
                             <div class="box bg-danger text-center">
                                 <h1 class="font-light text-white"><i class="mdi mdi-border-outside"></i></h1>
-                                <h6 class="text-white">Employee</h6>
+                                <h6 class="text-white">{{ __('employee') }}</h6>
                             </div>
                         </div>
                         </a>
@@ -261,6 +270,7 @@
     <script src="/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
     <script src="/dist/js/pages/chart/chart-page-init.js"></script>
 
+  
 </body>
 
 @endsection
